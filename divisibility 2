@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+#include<cmath>
+using namespace std;
+int main()
+{
+    int n;cin>>n;
+    vector<int>v(n);
+    for(int i=0;i<n;i++)
+    {
+        cin>>v[i];
+    }
+    int m=n/10;
+    vector<int>v1(m);
+    for(int i=0;i<m;i++)
+    {
+        cin>>v1[i];
+    }
+    for(int i=0;i<n;i++)
+    {
+        int div=v1[i%m];
+        int q=ceil(static_cast<double>(v[i])/div);
+        int r=v[i]%div;
+        cout<<"v[" <<i<<"] /v2[" << i%m << "] = "<< q<< ", reminder:"<< r<<endl;
+    }
+
+}
